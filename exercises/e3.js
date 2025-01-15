@@ -15,10 +15,17 @@
  */
 
 // Your code goes here...
+function doesArrayIncludeItemsBetweenVals(arr, val1, val2) {
+  for (const item of arr) {
+    if (item > val1 && item < val2) {
+      return true;
+    }
+  }
+  return false;
+}
 
-
-
-
+console.log(doesArrayIncludeItemsBetweenVals([2, 4, 2], 3, 5));
+console.log(doesArrayIncludeItemsBetweenVals([2, 4, 2], 5, 10));
 /**
  * ====================================================
  * Please read the /exercises-info/e4.md file. It describes different types of syntax to write functions
@@ -27,29 +34,54 @@
  * Arrow Function name: getValueWithConditionTwo;
  * Variable name for the function expression: getValueWithConditionThree;
  * All three functions resolve the same task:
-    * The function takes two numbers as arguments
-    * If the numbers are both equal to 40, return the sum of them
-    * Else return the doubled sum of them
+ * The function takes two numbers as arguments
+ * If the numbers are both equal to 40, return the sum of them
+ * Else return the doubled sum of them
  * getValueWithConditionOne(40, 40) => 80;
  * getValueWithConditionOne(20, 30) => 100;
  */
 
 // Your code goes here...
+function getValueWithConditionOne(car1, car2) {
+  if (car1 == 40 && car2 == 40) {
+    return car1 + car2;
+  } else {
+    return car1 * 2 + car2 * 2;
+  }
+}
+var cars = getValueWithConditionOne(40, 40);
+console.log(cars);
 
+const getValueWithConditionTwo = (toy1, toy2) => {
+  if (toy1 == 40 && toy2 == 40) {
+    return toy1 + toy2;
+  } else {
+    return toy1 * 2 + toy2 * 2;
+  }
+};
+var toys = getValueWithConditionTwo(40, 40);
+console.log(toys);
 
-
-
+function getValueWithConditionThree(apple1, apple2) {
+  if (apple1 == 40 && apple2 == 40) {
+    return apple1 + apple2;
+  } else {
+    return apple1 * 2 + apple2 * 2;
+  }
+}
+var apples = getValueWithConditionThree(40, 40);
+console.log(apples);
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-3"
 // If the test has all tests passed, switch to the next exercise file
 // If any of the tests fails, refactor the code and run the test command after you've fixed the function
 
-
 // Do not delete or change the lines beneath
 const f = {
-  doesArrayIncludeItemsBetweenVals: doesArrayIncludeItemsBetweenVals || undefined,
+  doesArrayIncludeItemsBetweenVals:
+    doesArrayIncludeItemsBetweenVals || undefined,
   getValueWithConditionOne: getValueWithConditionOne || undefined,
   getValueWithConditionTwo: getValueWithConditionTwo || undefined,
   getValueWithConditionThree: getValueWithConditionThree || undefined,
-}
+};
 export { f };
